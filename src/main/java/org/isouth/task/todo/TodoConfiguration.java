@@ -1,5 +1,6 @@
 package org.isouth.task.todo;
 
+import org.isouth.task.TodoService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

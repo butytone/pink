@@ -1,5 +1,6 @@
 package org.isouth.task.user;
 
+import org.isouth.task.UserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

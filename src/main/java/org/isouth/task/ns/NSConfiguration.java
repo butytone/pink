@@ -1,5 +1,6 @@
 package org.isouth.task.ns;
 
+import org.isouth.task.NSService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

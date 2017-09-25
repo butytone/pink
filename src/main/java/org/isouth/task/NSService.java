@@ -1,6 +1,7 @@
-package org.isouth.task.ns;
+package org.isouth.task;
 
 import org.apache.ibatis.annotations.Select;
+import org.isouth.task.ns.NS;
 
 import java.util.List;
 

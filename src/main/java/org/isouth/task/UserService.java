@@ -1,6 +1,8 @@
-package org.isouth.task.user;
+package org.isouth.task;
 
 import io.reactivex.Observable;
+import org.isouth.task.user.User;
+import org.isouth.task.user.UserEvent;
 
 import java.util.List;
 

@@ -1,7 +1,8 @@
 package org.isouth.task.ns;
 
+import org.isouth.task.NSService;
 import org.isouth.task.user.UserEvent;
-import org.isouth.task.user.UserService;
+import org.isouth.task.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;

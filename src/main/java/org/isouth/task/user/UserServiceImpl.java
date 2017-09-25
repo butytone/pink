@@ -3,6 +3,7 @@ package org.isouth.task.user;
 import io.reactivex.Observable;
 import io.reactivex.subjects.PublishSubject;
 import io.reactivex.subjects.Subject;
+import org.isouth.task.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;

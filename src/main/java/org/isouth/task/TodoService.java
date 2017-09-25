@@ -1,4 +1,4 @@
-package org.isouth.task.todo;
+package org.isouth.task;
 
 public interface TodoService {
 }
