@@ -1,9 +1,9 @@
 package com.momo.pink.ns;
 
 import com.momo.pink.NS;
-import com.momo.pink.UserService;
 import com.momo.pink.NSService;
 import com.momo.pink.UserEvent;
+import com.momo.pink.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -23,6 +23,8 @@ public class NSServiceImpl implements NSService {
                         .getName())
                     .setType(NS.USER_TYPE));
             } else {
+                deleteNS(e.getUser()
+                    .getName());
             }
         });
     }
@@ -34,8 +36,8 @@ public class NSServiceImpl implements NSService {
     }
 
     @Override
-    public void deleteNS(String id) {
-
+    public void deleteNS(String name) {
+        nsDao.deleteNS(name);
     }
 
     @Override

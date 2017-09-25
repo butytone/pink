@@ -31,9 +31,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void deleteUser(String email) {
-        userDao.deleteUser(email);
-        subject.onNext(new UserEvent(UserEvent.DELETE,
-            new User().setEmail(email)));
+        User user = getUser(email);
+        if (user != null) {
+            userDao.deleteUser(email);
+            subject.onNext(new UserEvent(
+                UserEvent.DELETE, user));
+        }
+
     }
 
     @Override

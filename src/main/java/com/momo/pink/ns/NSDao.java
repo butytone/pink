@@ -11,8 +11,8 @@ public interface NSDao {
     @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "ID")
     void addNS(NS ns);
 
-    @Delete("DELETE FROM NS WHERE ID=#{id}")
-    void deleteNS(String id);
+    @Delete("DELETE FROM NS WHERE NAME=#{name}")
+    void deleteNS(String name);
 
     @Select("SELECT * FROM NS")
     List<NS> listNSs();
