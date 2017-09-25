@@ -1,19 +1,19 @@
 ### Add user
-POST http://localhost:8080/users
+POST http://localhost:8080/api/v1.0/users
 Content-Type: application/json
 
 {"email":"bphanzhu@gmail.com","name":"qiyi"}
 
 
 ### List all users
-GET http://localhost:8080/users
+GET http://localhost:8080/api/v1.0/users
 
 
 ### Get user detail
-GET http://localhost:8080/users/bphanzhu@gmail.com
+GET http://localhost:8080/api/v1.0/users/bphanzhu@gmail.com
 
 
 ### Delete user
-DELETE http://localhost:8080/users/bphanzhu@gmail.com
+DELETE http://localhost:8080/api/v1.0/users/bphanzhu@gmail.com
 
 
