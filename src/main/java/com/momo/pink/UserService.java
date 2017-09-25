@@ -1,11 +1,12 @@
 package com.momo.pink;
 
 import io.reactivex.Observable;
-import com.momo.pink.user.User;
-import com.momo.pink.user.UserEvent;
 
 import java.util.List;
 
+/**
+ * @since 1.0
+ */
 public interface UserService {
     Observable<UserEvent> observe();
 

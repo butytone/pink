@@ -1,5 +1,6 @@
 package com.momo.pink.user;
 
+import com.momo.pink.User;
 import com.momo.pink.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;

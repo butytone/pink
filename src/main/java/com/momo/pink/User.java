@@ -1,5 +1,8 @@
-package com.momo.pink.user;
+package com.momo.pink;
 
+/**
+ * @since 1.0
+ */
 public class User {
     private String email;
     private String name;

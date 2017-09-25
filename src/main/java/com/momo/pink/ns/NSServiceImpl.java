@@ -1,8 +1,9 @@
 package com.momo.pink.ns;
 
+import com.momo.pink.NS;
 import com.momo.pink.UserService;
 import com.momo.pink.NSService;
-import com.momo.pink.user.UserEvent;
+import com.momo.pink.UserEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;

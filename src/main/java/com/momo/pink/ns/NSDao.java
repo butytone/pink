@@ -1,5 +1,6 @@
 package com.momo.pink.ns;
 
+import com.momo.pink.NS;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;

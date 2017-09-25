@@ -1,5 +1,8 @@
-package com.momo.pink.ns;
+package com.momo.pink;
 
+/**
+ * @since 1.0
+ */
 public class NS {
     public static final int USER_TYPE = 0;
     public static final int GROUP_TYPE = 1;

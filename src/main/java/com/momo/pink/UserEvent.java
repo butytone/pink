@@ -1,7 +1,10 @@
-package com.momo.pink.user;
+package com.momo.pink;
 
 import java.util.EventObject;
 
+/**
+ * @since 1.0
+ */
 public class UserEvent extends EventObject {
 
     public static final String ADD = "ADD";

@@ -1,5 +1,7 @@
 package com.momo.pink.user;
 
+import com.momo.pink.User;
+import com.momo.pink.UserEvent;
 import com.momo.pink.UserService;
 import io.reactivex.Observable;
 import io.reactivex.subjects.PublishSubject;
