@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Select;
 import java.util.List;
 
 @Mapper
-public interface UserMapper {
+public interface UserDao {
 
     @Select("SELECT * FROM USERS")
     List<User> listUsers();
@@ -16,7 +16,7 @@ public interface UserMapper {
     @Select("SELECT * FROM USERS WHERE EMAIL=#{email}")
     User getUser(String email);
 
-    @Insert("INSERT INTO USERS (EMAIL, ALIAS) VALUES(#{email},#{alias})")
+    @Insert("INSERT INTO USERS (EMAIL, NAME) VALUES(#{email},#{name})")
     void addUser(User user);
 
     @Delete("DELETE FROM USERS WHERE EMAIL=#{email}")
