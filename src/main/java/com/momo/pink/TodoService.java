@@ -1,4 +1,4 @@
-package org.isouth.task;
+package com.momo.pink;
 
 public interface TodoService {
 }

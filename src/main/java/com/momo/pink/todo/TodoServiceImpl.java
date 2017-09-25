@@ -1,6 +1,6 @@
-package org.isouth.task.todo;
+package com.momo.pink.todo;
 
-import org.isouth.task.TodoService;
+import com.momo.pink.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class TodoServiceImpl implements TodoService {

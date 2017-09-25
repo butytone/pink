@@ -1,6 +1,6 @@
-package org.isouth.task.ns;
+package com.momo.pink.ns;
 
-import org.isouth.task.NSService;
+import com.momo.pink.NSService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

@@ -1,8 +1,8 @@
-package org.isouth.task.ns;
+package com.momo.pink.ns;
 
-import org.isouth.task.NSService;
-import org.isouth.task.user.UserEvent;
-import org.isouth.task.UserService;
+import com.momo.pink.UserService;
+import com.momo.pink.NSService;
+import com.momo.pink.user.UserEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;

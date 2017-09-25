@@ -1,8 +1,8 @@
-package org.isouth.task.app;
+package com.momo.pink.app;
 
-import org.isouth.task.ns.NSConfiguration;
-import org.isouth.task.todo.TodoConfiguration;
-import org.isouth.task.user.UserConfiguration;
+import com.momo.pink.ns.NSConfiguration;
+import com.momo.pink.todo.TodoConfiguration;
+import com.momo.pink.user.UserConfiguration;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,9 +14,9 @@ import org.springframework.context.annotation.Import;
     NSConfiguration.class,
     TodoConfiguration.class
 })
-@MapperScan("org.isouth.task")
-public class TaskApp {
+@MapperScan("com.momo.pink")
+public class PinkApp {
     public static void main(String[] args) {
-        SpringApplication.run(TaskApp.class, args);
+        SpringApplication.run(PinkApp.class, args);
     }
 }

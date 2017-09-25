@@ -1,4 +1,4 @@
-package org.isouth.task.todo;
+package com.momo.pink.todo;
 
 import org.apache.ibatis.annotations.Mapper;
 

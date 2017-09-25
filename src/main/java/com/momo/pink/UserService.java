@@ -1,8 +1,8 @@
-package org.isouth.task;
+package com.momo.pink;
 
 import io.reactivex.Observable;
-import org.isouth.task.user.User;
-import org.isouth.task.user.UserEvent;
+import com.momo.pink.user.User;
+import com.momo.pink.user.UserEvent;
 
 import java.util.List;
 

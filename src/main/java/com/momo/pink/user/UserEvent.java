@@ -1,4 +1,4 @@
-package org.isouth.task.user;
+package com.momo.pink.user;
 
 import java.util.EventObject;
 

@@ -1,4 +1,4 @@
-package org.isouth.task.ns;
+package com.momo.pink.ns;
 
 public class NSController {
 }

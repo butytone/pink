@@ -1,4 +1,4 @@
-package org.isouth.task.ns;
+package com.momo.pink.ns;
 
 public class NS {
     public static final int USER_TYPE = 0;

@@ -1,6 +1,6 @@
-package org.isouth.task.todo;
+package com.momo.pink.todo;
 
-import org.isouth.task.TodoService;
+import com.momo.pink.TodoService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

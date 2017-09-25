@@ -1,4 +1,4 @@
-package org.isouth.task.user;
+package com.momo.pink.user;
 
 public class User {
     private String email;

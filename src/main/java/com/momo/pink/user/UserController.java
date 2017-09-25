@@ -1,6 +1,6 @@
-package org.isouth.task.user;
+package com.momo.pink.user;
 
-import org.isouth.task.UserService;
+import com.momo.pink.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.http.HttpStatus;

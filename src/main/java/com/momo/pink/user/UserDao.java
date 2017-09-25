@@ -1,4 +1,4 @@
-package org.isouth.task.user;
+package com.momo.pink.user;
 
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;

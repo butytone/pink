@@ -1,4 +1,4 @@
-package org.isouth.task.ns;
+package com.momo.pink.ns;
 
 import org.apache.ibatis.annotations.*;
 

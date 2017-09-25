@@ -1,7 +1,7 @@
-package org.isouth.task;
+package com.momo.pink;
 
+import com.momo.pink.ns.NS;
 import org.apache.ibatis.annotations.Select;
-import org.isouth.task.ns.NS;
 
 import java.util.List;
 
