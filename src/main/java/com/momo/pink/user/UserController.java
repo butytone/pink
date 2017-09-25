@@ -26,16 +26,21 @@ public class UserController {
         return user;
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, path = "/{email:.+}")
+    @RequestMapping(method = RequestMethod.DELETE, path = "/{name}")
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void deleteUser(@PathVariable("email") String email) {
-        userService.deleteUser(email);
+    public void deleteUser(@PathVariable("name") String name, HttpServletResponse response) {
+        User user = userService.getUser(name);
+        if (user == null) {
+            response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            return;
+        }
+        userService.deleteUser(name);
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = "/{email:.+}")
+    @RequestMapping(method = RequestMethod.GET, path = "/{name}")
     @ResponseBody
-    public User getUser(@PathVariable("email") String email, HttpServletResponse response) {
-        User user = userService.getUser(email);
+    public User getUser(@PathVariable("name") String name, HttpServletResponse response) {
+        User user = userService.getUser(name);
         if (user == null) {
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return null;

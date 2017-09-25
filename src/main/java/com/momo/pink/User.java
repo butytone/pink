@@ -4,6 +4,7 @@ package com.momo.pink;
  * @since 1.0
  */
 public class User {
+    //TODO 增加 ID 字段
     private String email;
     private String name;
 

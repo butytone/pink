@@ -16,4 +16,10 @@ public interface NSDao {
 
     @Select("SELECT * FROM NS")
     List<NS> listNSs();
+
+    @Select("SELECT * FROM NS WHERE ID=#{id}")
+    NS getNSByID(int id);
+
+    @Select("SELECT * FROM NS WHERE NAME=#{name}")
+    NS getNSByName(String name);
 }

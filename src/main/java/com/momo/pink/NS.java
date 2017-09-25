@@ -6,15 +6,15 @@ package com.momo.pink;
 public class NS {
     public static final int USER_TYPE = 0;
     public static final int GROUP_TYPE = 1;
-    private String id;
+    private Integer id;
     private int type;
     private String name;
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public NS setId(String id) {
+    public NS setId(Integer id) {
         this.id = id;
         return this;
     }

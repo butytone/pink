@@ -14,12 +14,12 @@ public interface UserDao {
     @Select("SELECT * FROM USERS")
     List<User> listUsers();
 
-    @Select("SELECT * FROM USERS WHERE EMAIL=#{email}")
-    User getUser(String email);
+    @Select("SELECT * FROM USERS WHERE NAME=#{name}")
+    User getUser(String name);
 
     @Insert("INSERT INTO USERS (EMAIL, NAME) VALUES(#{email},#{name})")
     void addUser(User user);
 
-    @Delete("DELETE FROM USERS WHERE EMAIL=#{email}")
-    void deleteUser(String email);
+    @Delete("DELETE FROM USERS WHERE NAME=#{name}")
+    void deleteUser(String name);
 }

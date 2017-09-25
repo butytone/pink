@@ -12,9 +12,9 @@ public interface UserService {
 
     User addUser(User user);
 
-    void deleteUser(String email);
+    void deleteUser(String name);
 
-    User getUser(String email);
+    User getUser(String name);
 
     List<User> listUsers();
 }

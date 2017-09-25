@@ -25,15 +25,16 @@ public class UserServiceImpl implements UserService {
     @Override
     public User addUser(User user) {
         userDao.addUser(user);
-        subject.onNext(new UserEvent(UserEvent.ADD, user));
+        subject.onNext(new UserEvent(
+            UserEvent.ADD, user));
         return user;
     }
 
     @Override
-    public void deleteUser(String email) {
-        User user = getUser(email);
+    public void deleteUser(String name) {
+        User user = getUser(name);
         if (user != null) {
-            userDao.deleteUser(email);
+            userDao.deleteUser(name);
             subject.onNext(new UserEvent(
                 UserEvent.DELETE, user));
         }
@@ -41,8 +42,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getUser(String email) {
-        return userDao.getUser(email);
+    public User getUser(String name) {
+        return userDao.getUser(name);
     }
 
     @Override
