@@ -1,6 +1,6 @@
 package com.momo.pink;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * @since 1.0
@@ -11,7 +11,7 @@ public class Todo {
     private Long owner;
     private Long creator;
     private Long category;
-    private LocalDateTime createAt;
+    private Date createAt;
 
     public Long getId() {
         return id;
@@ -58,11 +58,11 @@ public class Todo {
         return this;
     }
 
-    public LocalDateTime getCreateAt() {
+    public Date getCreateAt() {
         return createAt;
     }
 
-    public Todo setCreateAt(LocalDateTime createAt) {
+    public Todo setCreateAt(Date createAt) {
         this.createAt = createAt;
         return this;
     }

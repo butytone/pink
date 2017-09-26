@@ -6,9 +6,10 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.time.LocalDateTime;
+import java.util.Calendar;
+import java.util.List;
 
-@RequestMapping("api/v1.0/todos")
+@RequestMapping("api/v1.0/owners/{name}/todos")
 public class TodoController {
     @Autowired
     private TodoService todoService;
@@ -22,17 +23,17 @@ public class TodoController {
     @Autowired
     private CategoryService categoryService;
 
-    @RequestMapping(method = RequestMethod.POST, path = "/{namespace}")
+    @RequestMapping(method = RequestMethod.POST, path = "")
     @ResponseBody
-    public Todo addTodo(@PathVariable String namespace, @RequestBody Todo todo,
+    public Todo addTodo(@PathVariable("name") String name, @RequestBody Todo todo,
                         HttpServletRequest request, HttpServletResponse response) {
-        String name = request.getHeader("X-PINK-USER");
-        User user = userService.getUser(name);
+        String userName = request.getHeader("X-PINK-USER");
+        User user = userService.getUser(userName);
         if (user == null) {
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             return null;
         }
-        Owner owner = ownerService.getOwner(namespace);
+        Owner owner = ownerService.getOwner(name);
         if (owner == null) {
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return null;
@@ -43,7 +44,18 @@ public class TodoController {
             .setCreator(user.getId())
             .setOwner(owner.getId())
             .setCategory(category.getId())
-            .setCreateAt(LocalDateTime.now()));
+            .setCreateAt(Calendar.getInstance().getTime()));
         return todo;
+    }
+
+    @RequestMapping(method = RequestMethod.GET, path = "")
+    @ResponseBody
+    public List<Todo> listTodos(@PathVariable("name") String name, HttpServletResponse response) {
+        Owner owner = ownerService.getOwner(name);
+        if (owner == null) {
+            response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            return null;
+        }
+        return todoService.listTodos(owner.getId());
     }
 }
