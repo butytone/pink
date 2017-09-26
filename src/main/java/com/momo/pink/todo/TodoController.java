@@ -14,7 +14,7 @@ public class TodoController {
     private TodoService todoService;
 
     @Autowired
-    private NSService nsService;
+    private OwnerService ownerService;
 
     @Autowired
     private UserService userService;
@@ -27,16 +27,21 @@ public class TodoController {
     public Todo addTodo(@PathVariable String namespace, @RequestBody Todo todo,
                         HttpServletRequest request, HttpServletResponse response) {
         String name = request.getHeader("X-PINK-USER");
-        NS ns = nsService.getNS(namespace);
-        if (ns == null) {
+        User user = userService.getUser(name);
+        if (user == null) {
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            return null;
+        }
+        Owner owner = ownerService.getOwner(namespace);
+        if (owner == null) {
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return null;
         }
         Category category = categoryService.getCategory(
-            ns.getId(), CategoryService.DEFAULT);
+            owner.getId(), CategoryService.DEFAULT);
         todoService.addTodo(todo
-            .setCreator(name)
-            .setOwner(ns.getId())
+            .setCreator(user.getId())
+            .setOwner(owner.getId())
             .setCategory(category.getId())
             .setCreateAt(LocalDateTime.now()));
         return todo;

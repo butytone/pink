@@ -1,9 +1,10 @@
-package com.momo.pink.user;
+package com.momo.pink.owner;
 
+import com.momo.pink.Owner;
+import com.momo.pink.OwnerService;
 import com.momo.pink.User;
 import com.momo.pink.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,15 +15,19 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    private UserService userService;
+    private OwnerService ownerService;
 
     @Autowired
-    private ApplicationContext ctx;
+    private UserService userService;
 
     @RequestMapping(method = RequestMethod.POST, path = "")
     @ResponseBody
     public User addUser(@RequestBody User user) {
-        userService.addUser(user);
+        Owner owner = ownerService.addOwner(new Owner()
+            .setName(user.getName())
+            .setType(Owner.USER_TYPE));
+        userService.addUser(user.setId(
+            owner.getId()));
         return user;
     }
 
@@ -35,6 +40,7 @@ public class UserController {
             return;
         }
         userService.deleteUser(name);
+        ownerService.deleteOwner(user.getId());
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/{name}")

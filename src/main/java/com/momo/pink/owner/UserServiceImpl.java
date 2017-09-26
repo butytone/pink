@@ -1,4 +1,4 @@
-package com.momo.pink.user;
+package com.momo.pink.owner;
 
 import com.momo.pink.User;
 import com.momo.pink.UserEvent;

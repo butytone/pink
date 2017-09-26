@@ -4,9 +4,18 @@ package com.momo.pink;
  * @since 1.0
  */
 public class User {
-    //TODO 增加 ID 字段
+    private Long id;
     private String email;
     private String name;
+
+    public Long getId() {
+        return id;
+    }
+
+    public User setId(Long id) {
+        this.id = id;
+        return this;
+    }
 
     public String getEmail() {
         return email;

@@ -6,7 +6,7 @@ package com.momo.pink;
 public interface CategoryService {
     String DEFAULT = "default";
 
-    Category getCategory(int id);
+    Category getCategory(long id);
 
-    Category getCategory(int owner, String name);
+    Category getCategory(long owner, String name);
 }

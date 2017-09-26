@@ -11,9 +11,11 @@ public interface CategoryDao {
     void addCategory(Category category);
 
     @Select("SELECT * FROM CATEGORIES WHERE ID=#{id}")
-    Category getCategoryByID(int id);
+    Category getCategoryByID(long id);
 
     @Select("SELECT * FROM CATEGORIES WHERE OWNER=#{owner} AND NAME=#{name}")
-    Category getCategoryByName(@Param("owner") int owner, @Param("name") String name);
+    Category getCategoryByName(@Param("owner") long owner, @Param("name") String name);
 
+    @Delete("DELETE FROM CATEGORIES WHERE OWNER=#{owner}")
+    void deleteAllCategories(long owner);
 }

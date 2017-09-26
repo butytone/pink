@@ -2,34 +2,37 @@ package com.momo.pink.todo;
 
 import com.momo.pink.Category;
 import com.momo.pink.CategoryService;
-import com.momo.pink.NSEvent;
-import com.momo.pink.NSService;
+import com.momo.pink.OwnerEvent;
+import com.momo.pink.OwnerService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class CategoryServiceImpl implements CategoryService {
     @Autowired
-    private NSService nsService;
+    private OwnerService ownerService;
 
     @Autowired
     private CategoryDao categoryDao;
 
     public void init() {
-        nsService.observe().subscribe(e -> {
-            if (NSEvent.ADD.equals(e.getType())) {
+        ownerService.observe().subscribe(e -> {
+            if (OwnerEvent.ADD.equals(e.getType())) {
                 categoryDao.addCategory(new Category()
                     .setName(CategoryService.DEFAULT)
-                    .setOwner(e.getNS().getId()));
+                    .setOwner(e.getOwner().getId()));
+            } else {
+                categoryDao.deleteAllCategories(
+                    e.getOwner().getId());
             }
         });
     }
 
     @Override
-    public Category getCategory(int id) {
+    public Category getCategory(long id) {
         return categoryDao.getCategoryByID(id);
     }
 
     @Override
-    public Category getCategory(int owner, String name) {
+    public Category getCategory(long owner, String name) {
         return categoryDao.getCategoryByName(owner, name);
     }
 }

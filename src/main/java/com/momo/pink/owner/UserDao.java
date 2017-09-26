@@ -1,4 +1,4 @@
-package com.momo.pink.user;
+package com.momo.pink.owner;
 
 import com.momo.pink.User;
 import org.apache.ibatis.annotations.Delete;
@@ -11,13 +11,13 @@ import java.util.List;
 @Mapper
 public interface UserDao {
 
-    @Select("SELECT * FROM USERS")
+    @Select("SELECT ID, EMAIL, NAME FROM USERS")
     List<User> listUsers();
 
-    @Select("SELECT * FROM USERS WHERE NAME=#{name}")
+    @Select("SELECT ID, EMAIL, NAME FROM USERS WHERE NAME=#{name}")
     User getUser(String name);
 
-    @Insert("INSERT INTO USERS (EMAIL, NAME) VALUES(#{email},#{name})")
+    @Insert("INSERT INTO USERS (ID, EMAIL, NAME) VALUES(#{id}, #{email},#{name})")
     void addUser(User user);
 
     @Delete("DELETE FROM USERS WHERE NAME=#{name}")

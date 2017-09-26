@@ -8,9 +8,9 @@ import java.time.LocalDateTime;
 public class Todo {
     private Long id;
     private String title;
-    private Integer owner;
-    private String creator;
-    private Integer category;
+    private Long owner;
+    private Long creator;
+    private Long category;
     private LocalDateTime createAt;
 
     public Long getId() {
@@ -31,29 +31,29 @@ public class Todo {
         return this;
     }
 
-    public Integer getOwner() {
+    public Long getOwner() {
         return owner;
     }
 
-    public Todo setOwner(Integer owner) {
+    public Todo setOwner(Long owner) {
         this.owner = owner;
         return this;
     }
 
-    public String getCreator() {
+    public Long getCreator() {
         return creator;
     }
 
-    public Todo setCreator(String creator) {
+    public Todo setCreator(Long creator) {
         this.creator = creator;
         return this;
     }
 
-    public Integer getCategory() {
+    public Long getCategory() {
         return category;
     }
 
-    public Todo setCategory(Integer category) {
+    public Todo setCategory(Long category) {
         this.category = category;
         return this;
     }

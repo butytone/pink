@@ -4,15 +4,15 @@ package com.momo.pink;
  * @since 1.0
  */
 public class Category {
-    private Integer id;
+    private Long id;
     private String name;
-    private Integer owner;
+    private Long owner;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public Category setId(Integer id) {
+    public Category setId(Long id) {
         this.id = id;
         return this;
     }
@@ -26,11 +26,11 @@ public class Category {
         return this;
     }
 
-    public Integer getOwner() {
+    public Long getOwner() {
         return owner;
     }
 
-    public Category setOwner(Integer owner) {
+    public Category setOwner(Long owner) {
         this.owner = owner;
         return this;
     }
