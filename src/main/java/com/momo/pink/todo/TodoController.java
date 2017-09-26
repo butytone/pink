@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Calendar;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RequestMapping("api/v1.0/owners/{name}/todos")
@@ -44,7 +44,7 @@ public class TodoController {
             .setCreator(user.getId())
             .setOwner(owner.getId())
             .setCategory(category.getId())
-            .setCreateAt(Calendar.getInstance().getTime()));
+            .setCreateAt(LocalDateTime.now()));
         return todo;
     }
 
