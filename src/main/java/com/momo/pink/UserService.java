@@ -16,5 +16,6 @@ public interface UserService {
 
     User getUser(String name);
 
+    //TODO 支持分页
     List<User> listUsers();
 }

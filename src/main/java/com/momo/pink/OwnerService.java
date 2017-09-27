@@ -15,6 +15,7 @@ public interface OwnerService {
 
     void deleteOwner(long id);
 
+    // TODO 支持分页
     List<Owner> listOwners();
 
     Owner getOwner(int id);

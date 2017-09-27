@@ -15,6 +15,7 @@ import org.springframework.context.annotation.Import;
 @MapperScan("com.momo.pink")
 public class PinkApp {
     public static void main(String[] args) {
+        System.setProperty("spring.jackson.serialization.write_dates_as_timestamps", "false");
         SpringApplication.run(PinkApp.class, args);
     }
 }

@@ -4,6 +4,7 @@ package com.momo.pink;
  * @since 1.0
  */
 public class Category {
+    public static final String DEFAULT = "default";
     private Long id;
     private String name;
     private Long owner;

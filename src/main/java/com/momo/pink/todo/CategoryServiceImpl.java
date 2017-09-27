@@ -17,7 +17,7 @@ public class CategoryServiceImpl implements CategoryService {
         ownerService.observe().subscribe(e -> {
             if (OwnerEvent.ADD.equals(e.getType())) {
                 categoryDao.addCategory(new Category()
-                    .setName(CategoryService.DEFAULT)
+                    .setName(Category.DEFAULT)
                     .setOwner(e.getOwner().getId()));
             } else {
                 categoryDao.deleteAllCategories(

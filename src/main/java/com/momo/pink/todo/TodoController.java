@@ -39,7 +39,7 @@ public class TodoController {
             return null;
         }
         Category category = categoryService.getCategory(
-            owner.getId(), CategoryService.DEFAULT);
+            owner.getId(), Category.DEFAULT);
         todoService.addTodo(todo
             .setCreator(user.getId())
             .setOwner(owner.getId())
