@@ -10,3 +10,6 @@ X-PINK-USER: qiyi
 ### List todos
 GET http://localhost:8080/api/v1.0/owners/qiyi/todos
 X-PINK-USER: qiyi
+
+### Complete todo
+POST http://localhost:8080/api/v1.0/owners/qiyi/todos/1/complete

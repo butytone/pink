@@ -6,12 +6,15 @@ import java.time.LocalDateTime;
  * @since 1.0
  */
 public class Todo {
+    public static final String STATUS_CREATED = "CREATED";
+    public static final String STATUS_COMPLETED = "COMPLETED";
     private Long id;
     private String title;
     private Long owner;
     private Long creator;
     private Long category;
     private LocalDateTime createAt;
+    private String status;
 
     public Long getId() {
         return id;
@@ -64,6 +67,15 @@ public class Todo {
 
     public Todo setCreateAt(LocalDateTime createAt) {
         this.createAt = createAt;
+        return this;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public Todo setStatus(String status) {
+        this.status = status;
         return this;
     }
 }

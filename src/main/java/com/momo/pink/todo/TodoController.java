@@ -58,4 +58,21 @@ public class TodoController {
         }
         return todoService.listTodos(owner.getId());
     }
+
+    @RequestMapping(method = RequestMethod.POST, path = "/{id}")
+    @ResponseBody
+    public Todo edit(@PathVariable("name") String name, @PathVariable("id") long id, @RequestBody Todo todo) {
+        return todoService.updateTodo(todo.setId(id));
+    }
+
+    @RequestMapping(method = RequestMethod.POST, path = "/{id}/complete")
+    @ResponseBody
+    public Todo complete(@PathVariable("name") String name, @PathVariable("id") long id, HttpServletResponse response) {
+        Todo todo = todoService.getTodo(id);
+        if (todo == null) {
+            response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            return null;
+        }
+        return todoService.updateTodo(todo.setStatus(Todo.STATUS_COMPLETED));
+    }
 }

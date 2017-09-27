@@ -20,4 +20,15 @@ public class TodoServiceImpl implements TodoService {
     public List<Todo> listTodos(long owner) {
         return todoDao.listTodos(owner);
     }
+
+    @Override
+    public Todo updateTodo(Todo todo) {
+        todoDao.updateTodo(todo);
+        return todo;
+    }
+
+    @Override
+    public Todo getTodo(long id) {
+        return todoDao.getTodo(id);
+    }
 }
