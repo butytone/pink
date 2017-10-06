@@ -73,6 +73,6 @@ public class TodoController {
             response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             return null;
         }
-        return todoService.updateTodo(todo.setStatus(Todo.STATUS_COMPLETED));
+        return todoService.updateTodo(todo.setCompleted(true));
     }
 }

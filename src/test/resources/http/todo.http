@@ -6,10 +6,17 @@ X-PINK-USER: qiyi
 
 {"title":"Find her"}
 
+### Add todo
+POST http://localhost:8080/api/v1.0/owners/qiyi/todos
+Content-Type: application/json
+X-PINK-USER: qiyi
+
+{"title":"To change"}
+
 
 ### List todos
 GET http://localhost:8080/api/v1.0/owners/qiyi/todos
 X-PINK-USER: qiyi
 
 ### Complete todo
-POST http://localhost:8080/api/v1.0/owners/qiyi/todos/1/complete
+POST http://localhost:8080/api/v1.0/owners/qiyi/todos/2/complete

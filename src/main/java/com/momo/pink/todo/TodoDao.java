@@ -11,14 +11,14 @@ public interface TodoDao {
     @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "ID")
     void addTodo(Todo todo);
 
-    @Select("SELECT ID, TITLE, OWNER, CREATOR, CATEGORY, CREATE_AT, STATUS FROM TODOS WHERE OWNER=#{owner}")
+    @Select("SELECT ID, TITLE, OWNER, CREATOR, CATEGORY, CREATE_AT, COMPLETED FROM TODOS WHERE OWNER=#{owner}")
     @Results({@Result(property = "createAt", column = "CREATE_AT")})
     List<Todo> listTodos(long owner);
 
-    @Update("UPDATE TODOS SET TITLE=#{title}, CATEGORY=#{category}, STATUS=#{status} WHERE ID=#{id}")
+    @Update("UPDATE TODOS SET TITLE=#{title}, CATEGORY=#{category}, COMPLETED=#{completed} WHERE ID=#{id}")
     void updateTodo(Todo todo);
 
-    @Select("SELECT ID, TITLE, OWNER, CREATOR, CATEGORY, CREATE_AT, STATUS FROM TODOS WHERE ID=#{id}")
+    @Select("SELECT ID, TITLE, OWNER, CREATOR, CATEGORY, CREATE_AT, COMPLETED FROM TODOS WHERE ID=#{id}")
     @Results({@Result(property = "createAt", column = "CREATE_AT")})
     Todo getTodo(long id);
 }

@@ -2,15 +2,18 @@ Vue.use(VueMaterial)
 var app = new Vue({
     el: '#app',
     data: {
-        message: 'Hello Pink!',
-        todos: [{
-            "title": "Support transaction in pink",
-            "completeAt": "Oct 3, 2017",
-            "completed": false
-        }, {
-            "title": "Actrually not done",
-            "completed": true
-        }]
+        baseUri: "http://127.0.0.1:8080/api/v1.0/",
+        todos: []
     },
-    methods: {}
+    mounted: function () {
+        this.fetchTodos();
+    },
+    methods: {
+        fetchTodos: function () {
+            fetch(this.baseUri + "owners/qiyi/todos")
+                .then(stream => stream.json())
+                .then(data => this.todos = data)
+                .catch(error => console.error(error));
+        }
+    }
 });

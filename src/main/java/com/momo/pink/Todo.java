@@ -14,7 +14,7 @@ public class Todo {
     private Long creator;
     private Long category;
     private LocalDateTime createAt;
-    private String status;
+    private boolean completed;
 
     public Long getId() {
         return id;
@@ -70,12 +70,12 @@ public class Todo {
         return this;
     }
 
-    public String getStatus() {
-        return status;
+    public boolean isCompleted() {
+        return completed;
     }
 
-    public Todo setStatus(String status) {
-        this.status = status;
+    public Todo setCompleted(boolean completed) {
+        this.completed = completed;
         return this;
     }
 }
