@@ -19,18 +19,11 @@
         </md-button>
     </md-toolbar>
     <div class="main-content">
-        <md-list class="md-double-line">
-            <md-list class="md-double-line">
-                <md-list-item v-for="todo in todos">
-                    <md-avatar class="md-avatar-icon">
-                        <md-icon>{{ todo.status === 'COMPLETED' ? "done" : "work"}}</md-icon>
-                    </md-avatar>
-                    <div class="md-list-text-container">
-                        <span>{{todo.title}}</span>
-                        <p>{{todo.completeAt || "Future"}}</p>
-                    </div>
-                </md-list-item>
-            </md-list>
+        <md-list class="md-single-line">
+            <md-list-item v-for="todo in todos">
+                <md-checkbox v-bind:id="todo.id" v-bind:name="todo.title"
+                             v-model="todo.completed">{{todo.title}}
+                </md-checkbox>
         </md-list>
     </div>
 </div>

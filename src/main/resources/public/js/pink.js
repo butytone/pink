@@ -6,10 +6,11 @@ var app = new Vue({
         todos: [{
             "title": "Support transaction in pink",
             "completeAt": "Oct 3, 2017",
-            "status": "CREATED"
+            "completed": false
         }, {
             "title": "Actrually not done",
-            "status": "COMPLETED"
+            "completed": true
         }]
-    }
+    },
+    methods: {}
 });
