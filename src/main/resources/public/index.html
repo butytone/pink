@@ -12,11 +12,10 @@
 <body>
 <div id="app">
     <md-toolbar>
-        <h1 class="md-title">Pink</h1>
-        <span style="flex: 1"></span>
-        <md-button class="md-icon-button" @click="$refs.sidebar.toggle()">
+        <md-button class="md-icon-button">
             <md-icon>menu</md-icon>
         </md-button>
+        <h2 class="md-title" style="flex: 1">Pink</h2>
     </md-toolbar>
     <div class="main-content">
         <md-list class="md-single-line">
@@ -25,6 +24,24 @@
                              v-model="todo.completed">{{todo.title}}
                 </md-checkbox>
         </md-list>
+        <md-dialog md-open-from="#fab" md-close-to="#fab" ref="newTask">
+            <md-dialog-title>Create new task</md-dialog-title>
+            <md-dialog-content>
+                <form>
+                    <md-input-container>
+                        <label>Title</label>
+                        <md-textarea></md-textarea>
+                    </md-input-container>
+                </form>
+            </md-dialog-content>
+            <md-dialog-actions>
+                <md-button class="md-primary" @click="closeDialog('newTask')">Cancel</md-button>
+                <md-button class="md-primary" @click="closeDialog('newTask')">Create</md-button>
+            </md-dialog-actions>
+        </md-dialog>
+        <md-button id="fab" class="md-fab md-fab-bottom-right" @click="openDialog('newTask')">
+            <md-icon>add</md-icon>
+        </md-button>
     </div>
 </div>
 <script src="/js/pink.js"></script>
