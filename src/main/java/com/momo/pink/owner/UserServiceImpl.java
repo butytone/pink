@@ -1,5 +1,7 @@
-package com.momo.pink.user;
+package com.momo.pink.owner;
 
+import com.momo.pink.User;
+import com.momo.pink.UserEvent;
 import com.momo.pink.UserService;
 import io.reactivex.Observable;
 import io.reactivex.subjects.PublishSubject;
@@ -23,20 +25,25 @@ public class UserServiceImpl implements UserService {
     @Override
     public User addUser(User user) {
         userDao.addUser(user);
-        subject.onNext(new UserEvent(UserEvent.ADD, user));
+        subject.onNext(new UserEvent(
+            UserEvent.ADD, user));
         return user;
     }
 
     @Override
-    public void deleteUser(String email) {
-        userDao.deleteUser(email);
-        subject.onNext(new UserEvent(UserEvent.DELETE,
-            new User().setEmail(email)));
+    public void deleteUser(String name) {
+        User user = getUser(name);
+        if (user != null) {
+            userDao.deleteUser(name);
+            subject.onNext(new UserEvent(
+                UserEvent.DELETE, user));
+        }
+
     }
 
     @Override
-    public User getUser(String email) {
-        return userDao.getUser(email);
+    public User getUser(String name) {
+        return userDao.getUser(name);
     }
 
     @Override

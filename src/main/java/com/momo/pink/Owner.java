@@ -1,17 +1,20 @@
-package com.momo.pink.ns;
+package com.momo.pink;
 
-public class NS {
+/**
+ * @since 1.0
+ */
+public class Owner {
     public static final int USER_TYPE = 0;
     public static final int GROUP_TYPE = 1;
-    private String id;
+    private Long id;
     private int type;
     private String name;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public NS setId(String id) {
+    public Owner setId(Long id) {
         this.id = id;
         return this;
     }
@@ -20,7 +23,7 @@ public class NS {
         return type;
     }
 
-    public NS setType(int type) {
+    public Owner setType(int type) {
         this.type = type;
         return this;
     }
@@ -29,7 +32,7 @@ public class NS {
         return name;
     }
 
-    public NS setName(String name) {
+    public Owner setName(String name) {
         this.name = name;
         return this;
     }
